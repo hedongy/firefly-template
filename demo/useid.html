@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用id属性获取模板</title>
+</head>
+<body>
+    <script type="text/html" id="demo">
+        <div>{{title}}</div>
+        <div>
+            {{for item in list i}}
+                <span>{{item.name}}</span>&nbsp;&nbsp;
+            {{/for}}
+        </div>
+    </script>
+    <div id="demo-container"></div>
+    <script type="text/javascript" src="../firefly-template.min.js"></script>
+    <script type="text/javascript">
+        $f({
+          id: 'demo',
+          data: {
+            title: '这是一个demo',
+            list: [{
+              name: 'H'
+            }, {
+              name: 'E'
+            }, {
+              name: 'L'
+            }, {
+              name: 'L'
+            }, {
+              name: 'O'
+            }, {
+              name: '！'
+            }]
+          },
+          callback: function (err, html) {
+            if (!err) {
+              document.getElementById('demo-container').innerHTML = html;
+            }
+          }
+        });
+    </script>
+</body>
+</html>

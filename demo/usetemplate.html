@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用html模板文件获取</title>
+</head>
+<body>
+    <div id="template-container"></div>
+    <script type="text/javascript" src="../firefly-template.min.js"></script>
+    <script type="text/javascript">
+        $f({
+          templateUrl: './template/template.html',
+          data: {
+            title: '这是一个template 文件demo',
+            list: [{
+              name: 'H'
+            }, {
+              name: 'E'
+            }, {
+              name: 'L'
+            }, {
+              name: 'L'
+            }, {
+              name: 'O'
+            }, {
+              name: '！'
+            }]
+          },
+          callback: function (err, html) {
+            if (!err) {
+              document.getElementById('template-container').innerHTML = html;
+            }
+          }
+        });
+    </script>
+</body>
+</html>
