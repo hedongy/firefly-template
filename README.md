@@ -79,3 +79,23 @@ $f({
     <!-- dom 渲染-->
 {{/if}}
 ```
+
+# 打包构建
+你可以使用grunt、gulp、webpack等构建工具进行模板构建，将其压缩成一个.js文件，类似于angularJs模板js文件。文件内容格式如下：
+``` bash
+'use strict';
+
+  $f.$templateCache.put('/templates/a.html',
+    "<div class=\"panel panel-default\"> Hello</div>"
+  );
+
+
+  $f.$templateCache.put('/templates/b.html',
+    "<div class=\"panel panel-default\"> World</div>"
+  );
+```
+发布的时候可将模板js文件放在firefly-template.js后面，代码如下：
+``` bash
+  <script type="text/javascript" src="firefly-template.min.js"></script>
+  <script type="text/javascript" src="***.tmpl.js"></script>
+```
