@@ -719,8 +719,9 @@
     // 定义
     // option {templateUrl: 'url', data: 'data', callback: 'callback(err, result)'}
     var _$f = handler.$f = function (option) {
+        !option.data && (option.data = {});
         if (option && option.id) {
-            option.callback(null, template(option.id, option.data));
+            option.callback && option.callback(null, template(option.id, option.data));
             return;
         }
         var content = _$f.$templateCache.get(option.templateUrl);
@@ -733,18 +734,14 @@
                 _$f.$templateCache.put(option.templateUrl, result);
                 callbackFun(result);
             } else {
-                if (option.callback) {
-                    option.callback(error);
-                }
+                option.callback && option.callback(error);
             }
         });
 
         // 回调
         function callbackFun(result) {
             var render = template.compile(result);
-            if (option.callback) {
-                option.callback(null, render(option.data));
-            }
+            option.callback && option.callback(null, render(option.data));
         };
     };
 

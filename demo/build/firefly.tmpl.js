@@ -1,0 +1,1 @@
+$f.$templateCache.put('template.html','<div>\n    <p>{{title}}</p>\n    {{for item in list i}}\n        <span>{{item.name}}</span>&nbsp;&nbsp;\n    {{/for}}\n</div>');

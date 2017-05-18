@@ -82,6 +82,30 @@ $f({
 
 # 打包构建
 你可以使用grunt、gulp、webpack等构建工具进行模板构建，将其压缩成一个.js文件，类似于angularJs模板js文件。文件内容格式如下：
+
+本架构中使用的是gulp，下面是gulp的构建流程。
+
+### 1. 安装gulp依赖，在项目根目录执行下面命令：
+``` bash
+$ npm install
+```
+
+### 2. 在package.json文件中有一个将模板合并成*.tmpl.js文件脚本，命令如下：
+``` bash
+$ npm run tmpl
+
+执行完毕之后，在demo文件夹下出现build文件夹，里面有一个firefly.tmpl.js文件，这个就是合并之后的模板js文件。
+注：合并模板文件可根据构建工具自定义指定输出目录，文件名也可自定义。
+```
+
+### 3. 引用合并模板文件
+``` bash
+ 在你启动页面引入合并模板文件，此处举例demo/usetemplate.html中引用，代码如下：
+
+ <script type="text/javascript" src="build/firefly.tmpl.js"></script>
+```
+
+### 4. 合并模板文件内容，如下：
 ``` bash
 'use strict';
 
@@ -94,7 +118,7 @@ $f({
     "<div class=\"panel panel-default\"> World</div>"
   );
 ```
-发布的时候可将模板js文件放在firefly-template.js后面，代码如下：
+注：发布的时候可将模板js文件放在firefly-template.js后面，代码如下：
 ``` bash
   <script type="text/javascript" src="firefly-template.min.js"></script>
   <script type="text/javascript" src="***.tmpl.js"></script>

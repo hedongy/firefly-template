@@ -1,0 +1,29 @@
+{
+  "name": "firefly-template",
+  "version": "1.0.1",
+  "description": "A html template js",
+  "main": "firefly-template.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedongy/firefly-template.git"
+  },
+  "author": "Tuffy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hedongy/firefly-template/issues"
+  },
+  "scripts": {
+    "tmpl": "gulp tmpl-min"
+  },
+  "homepage": "https://github.com/hedongy/firefly-template#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.1.2"
+  }
+}
