@@ -4,7 +4,8 @@
   "description": "A html template js",
   "main": "firefly-template.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tmpl": "gulp tmpl-min"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hedongy/firefly-template/issues"
-  },
-  "scripts": {
-    "tmpl": "gulp tmpl-min"
   },
   "homepage": "https://github.com/hedongy/firefly-template#readme",
   "dependencies": {
