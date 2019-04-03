@@ -10,6 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/hedongy/firefly-template.git"
   },
+  "keywords": [
+    "firefly",
+    "tuffy",
+    "jquery",
+    "template",
+    "firefly-template"
+  ]
   "author": "Tuffy",
   "license": "ISC",
   "bugs": {
